@@ -19,8 +19,10 @@ int main() {
     string nome;
     
     // TODO: Leia o nome do usuário
-    
+    cin >> nome;
+
     // TODO: Exiba a saudação personalizada
-    
+    cout << "Olá, " << nome << "! Seja bem-vindo(a)!" << endl;
+
     return 0;
 }

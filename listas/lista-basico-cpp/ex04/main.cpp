@@ -18,21 +18,36 @@ using namespace std;
 
 template<typename T>
 void trocar(T& a, T& b) {
-    // Implemente a troca
+    // Implementa a troca
+    T temp = a;
+    a = b;
+    b = temp;
 }
 
 int main() {
-    // TODO: Crie shared_ptr para int
-    
-    // TODO: Crie shared_ptr para double
-    
-    // TODO: Exiba valores antes da troca
-    
-    // TODO: Troque os valores
-    
-    // TODO: Exiba valores depois da troca
-    
-    // TODO: Mostre contagem de referências
-    
+    // Crie shared_ptr para int
+    shared_ptr<int> p1 = make_shared<int>(5);
+    shared_ptr<int> p2 = make_shared<int>(10);
+
+    // Crie shared_ptr para double
+    shared_ptr<double> p3 = make_shared<double>(3.14);
+    shared_ptr<double> p4 = make_shared<double>(2.71);
+
+    // Exiba valores antes da troca
+    cout << "Antes: " << *p1 << " " << *p2 << endl;
+    cout << "Antes: " << *p3 << " " << *p4 << endl;
+
+    // Troque os valores
+    trocar(*p1, *p2);
+    trocar(*p3, *p4);
+
+    // Exiba valores depois da troca
+    cout << "Depois: " << *p1 << " " << *p2 << endl;
+    cout << "Depois: " << *p3 << " " << *p4 << endl;
+
+    // Mostre contagem de referências
+    cout << "Refs: " << p1.use_count() << " " << p2.use_count() << endl;
+    cout << "Refs: " << p3.use_count() << " " << p4.use_count() << endl;
+
     return 0;
 }
